@@ -2,6 +2,8 @@
 
 ## Overview
 
+![1](https://user-images.githubusercontent.com/58912194/217022271-03a1bf5d-5a12-4636-9ce4-3a357a53dd77.png)
+
 ## Scenarios
 
 ### 01. From WEB to the serverless NoSQL database
