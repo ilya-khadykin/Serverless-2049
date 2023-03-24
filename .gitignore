@@ -1,4 +1,5 @@
-**/target/
 .idea/
-
 *.iml
+
+**/.aws-sam/
+**/target/

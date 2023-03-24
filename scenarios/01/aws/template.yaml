@@ -4,40 +4,62 @@ Transform: AWS::Serverless-2016-10-31
 Globals:
 
   Function:
+    Environment:
+      Variables:
+        TABLE_NAME: serverless2049-dynamodb-table-Database
     FunctionUrlConfig:
       AuthType: NONE
-    Runtime: java11
-    Tracing: Active
+    MemorySize: 512
+    Timeout: 30
 
 Resources:
 
-  JavaFunction:
+  Java11Function:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: serverless2049-lambda-function-JavaFunction
       CodeUri: ./java-function
+      FunctionName: serverless2049-scenario01-function-Java11Function
       Handler: com.lineup.scenario01.function.java.Function
-      Timeout: 30
-      MemorySize: 512
-      Environment:
-        Variables:
-          TABLE_NAME: serverless2049-dynamodb-table-Database
+      Runtime: java11
       Policies:
         - AmazonDynamoDBFullAccess
 
-  TestFunction:
+  Java11ArmFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: serverless2049-lambda-function-TestFunction
-      CodeUri: ./test-function
-      Handler: com.lineup.scenario01.function.test.Function
-      Timeout: 600
-      MemorySize: 10240
-      Environment:
-        Variables:
-          FUNCTION_URL: !GetAtt JavaFunctionUrl.FunctionUrl
+      CodeUri: ./java-function
+      FunctionName: serverless2049-scenario01-function-Java11ArmFunction
+      Handler: com.lineup.scenario01.function.java.Function
+      Runtime: java11
+      Policies:
+        - AmazonDynamoDBFullAccess
+      Architectures:
+        - arm64
 
-  Table:
+  Java11SnapStartFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./java-function
+      FunctionName: serverless2049-scenario01-function-Java11SnapStartFunction
+      Handler: com.lineup.scenario01.function.java.Function
+      Runtime: java11
+      Policies:
+        - AmazonDynamoDBFullAccess
+      AutoPublishAlias: snap
+      SnapStart:
+        ApplyOn: PublishedVersions
+
+  GraalFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: java-function/native.zip
+      FunctionName: serverless2049-scenario01-function-GraalFunction
+      Handler: com.lineup.scenario01.function.java.Function
+      Runtime: provided.al2
+      Policies:
+        - AmazonDynamoDBFullAccess
+
+  DatabaseTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
       TableName: serverless2049-dynamodb-table-Database

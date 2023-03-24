@@ -8,8 +8,7 @@ Test:
   
   Input:
     Type: 'HTTP'
-    Count: '100,000'
-    Payload: 'UUID' # Randomly generated UUID string
+    Count: '1000'
     Parallel: 'true'
 
   Output:
@@ -19,8 +18,7 @@ Test:
       
 Infrastructure:
   Lambda:
-    - '*Function'
-    - 'TestFunction'
+    - 'Function'
   DynamoDB:
     - 'Table'
         
