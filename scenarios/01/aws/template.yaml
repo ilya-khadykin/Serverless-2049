@@ -59,6 +59,26 @@ Resources:
       Policies:
         - AmazonDynamoDBFullAccess
 
+  QuarkusFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: quarkus-function/target/function.zip
+      FunctionName: serverless2049-scenario01-function-QuarkusFunction
+      Handler: io.quarkus.amazon.lambda.runtime.QuarkusStreamHandler::handleRequest
+      Runtime: java11
+      Policies:
+        - AmazonDynamoDBFullAccess
+
+  QuarkusGraalFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: quarkus-function/target/function.zip
+      FunctionName: serverless2049-scenario01-function-QuarkusGraalFunction
+      Handler: com.lineup.scenario01.function.quarkus.QuarkusFunction
+      Runtime: provided.al2
+      Policies:
+        - AmazonDynamoDBFullAccess
+
   DatabaseTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
