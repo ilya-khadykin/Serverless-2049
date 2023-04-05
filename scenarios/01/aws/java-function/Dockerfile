@@ -3,7 +3,7 @@ FROM public.ecr.aws/amazonlinux/amazonlinux:2
 RUN yum -y update \
     && yum install -y unzip zip tar gzip bzip2-devel ed gcc gcc-c++ gcc-gfortran \
     less libcurl-devel openssl openssl-devel readline-devel xz-devel \
-    zlib-devel glibc-static libcxx libcxx-devel llvm-toolset-7 zlib-static \
+    zlib-devel glibc-static libcxx libcxx-devel llvm-toolset-7 zlib-static dos2unix \
     && rm -rf /var/cache/yum
 
 # Graal VM
@@ -39,5 +39,7 @@ RUN cp target/native native
 
 RUN chmod +x bootstrap
 RUN chmod +x native
+
+RUN dos2unix bootstrap
 
 RUN zip native.zip bootstrap native

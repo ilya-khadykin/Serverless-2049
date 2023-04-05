@@ -6,7 +6,7 @@
 
 ## Scenarios
 
-### 01. From WEB to the serverless NoSQL database
+### 01. HTTP triggered function writes to the serverless NoSQL database
 
 **Description**  
 - The serverless function, which triggers 1000 times and writes a record into the serverless NoSQL database.
@@ -42,3 +42,40 @@
 |:----------------:|:----------:|:-----------------:|:------------------:|:--------------:|
 | Average cheapest |    256     |    0.000000034    |         8          |      696       |
 | Average fastest  |    1024    |    0.000000134    |         7          |      477       |
+
+### 02. HTTP triggered function writes to serverless storage
+
+**Description**
+- The serverless function, which triggers 50 times and writes a record into the serverless storage.
+
+[Scenario](https://github.com/Berehulia/Serverless-2049/blob/master/scenarios/02/scenario-generic.yaml)
+
+#### AWS
+
+**Java 11 runtime**
+
+|                  | Memory, MB | Execution cost, $ | Execution time, ms | Cold start, ms |
+|:----------------:|:----------:|:-----------------:|:------------------:|:--------------:|
+| Average cheapest |    256     |     0.0000130     |        3092        |     28235      |
+| Average fastest  |    8192    |     0.0000790     |        587         |      2185      |
+
+**Java 11 runtime (ARM)**
+
+|                  | Memory, MB | Execution cost, $ | Execution time, ms | Cold start, ms |
+|:----------------:|:----------:|:-----------------:|:------------------:|:--------------:|
+| Average cheapest |    256     |     0.0000088     |        2592        |     24697      |
+| Average fastest  |    8192    |     0.0000550     |        508         |      2074      |
+
+**Java 11 runtime (SnapStart)**
+
+|                  | Memory, MB | Execution cost, $ | Execution time, ms | Cold start, ms |
+|:----------------:|:----------:|:-----------------:|:------------------:|:--------------:|
+| Average cheapest |    256     |     0.0000131     |        3127        |     28667      |
+| Average fastest  |    8192    |     0.0000740     |        548         |      2551      |
+
+**Custom runtime (Java 11 & GraalNI)**
+
+|                  | Memory, MB | Execution cost, $ | Execution time, ms | Cold start, ms |
+|:----------------:|:----------:|:-----------------:|:------------------:|:--------------:|
+| Average cheapest |    1024    |     0.0000320     |        1890        |      2569      |
+| Average fastest  |    2048    |     0.0000410     |        1218        |      1953      |
