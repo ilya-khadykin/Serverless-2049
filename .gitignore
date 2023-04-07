@@ -3,3 +3,4 @@
 
 **/.aws-sam/
 **/target/
+**/quarkus-function/native

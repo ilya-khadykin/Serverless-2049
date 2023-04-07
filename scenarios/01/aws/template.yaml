@@ -72,7 +72,7 @@ Resources:
   QuarkusGraalFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: quarkus-function/target/function.zip
+      CodeUri: quarkus-function/native/function.zip
       FunctionName: serverless2049-scenario01-function-QuarkusGraalFunction
       Handler: com.lineup.scenario01.function.quarkus.QuarkusFunction
       Runtime: provided.al2
