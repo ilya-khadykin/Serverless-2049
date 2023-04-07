@@ -1,0 +1,10 @@
+{
+  "power": 2048,
+  "cost": 2.3520000000000001e-7,
+  "duration": 6.625666666666669,
+  "stateMachine": {
+    "executionCost": 0.00028,
+    "lambdaCost": 0.00006489840000000003,
+    "visualization": "https://lambda-power-tuning.show/#AAEAAgADAAQACA==;jCXjQLTI8kC8dOFA3STgQHYF1EA=;l08QM5dPkDNjd9gzl08QNEmLfDQ="
+  }
+}
