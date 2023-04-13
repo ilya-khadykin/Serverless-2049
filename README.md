@@ -43,6 +43,22 @@
 | Average cheapest |    256     |    0.000000034    |         8          |      696       |
 | Average fastest  |    1024    |    0.000000134    |         7          |      477       |
 
+
+**Quarkus**
+
+|                  | Memory, MB | Execution cost, $ | Execution time, ms | Cold start, ms |
+|:----------------:|:----------:|:-----------------:|:------------------:|:--------------:|
+| Average cheapest |    512     |    0.000000168    |         19         |      9212      |
+| Average fastest  |    1024    |    0.000000202    |         12         |      4732      |
+
+
+**Quarkus GraalVM**
+
+|                  | Memory, MB | Execution cost, $ | Execution time, ms | Cold start, ms |
+|:----------------:|:----------:|:-----------------:|:------------------:|:--------------:|
+| Average cheapest |    256     |    0.000000034    |         7          |      864       |
+| Average fastest  |    2048    |    0.000000234    |         7          |      399       |
+
 ### 02. HTTP triggered function writes to serverless storage
 
 **Description**
