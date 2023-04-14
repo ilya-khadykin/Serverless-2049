@@ -1,0 +1,75 @@
+{
+  "lambdaARN": "arn:aws:lambda:eu-central-1:299339426808:function:python-scenario-01-PythonScenario01Function-EP8fyqCWqLDj",
+  "strategy": "speed",
+  "num": 100,
+  "payload": {
+    "body": "",
+    "headers": {},
+    "httpMethod": "GET",
+    "isBase64Encoded": false,
+    "multiValueHeaders": {},
+    "multiValueQueryStringParameters": {},
+    "path": "pythonScenario01",
+    "pathParameters": {},
+    "queryStringParameters": {},
+    "requestContext": {},
+    "resource": "",
+    "stageVariables": {}
+  },
+  "powerValues": [
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    3008
+  ],
+  "stats": [
+    {
+      "averagePrice": 4.4520000000000004e-7,
+      "averageDuration": 211.9608333333334,
+      "totalCost": 0.00004683420000000001,
+      "value": 128
+    },
+    {
+      "averagePrice": 4.0740000000000006e-7,
+      "averageDuration": 96.08183333333334,
+      "totalCost": 0.000043381799999999985,
+      "value": 256
+    },
+    {
+      "averagePrice": 4.788000000000001e-7,
+      "averageDuration": 56.43216666666669,
+      "totalCost": 0.0000483588,
+      "value": 512
+    },
+    {
+      "averagePrice": 6.720000000000001e-7,
+      "averageDuration": 39.905666666666654,
+      "totalCost": 0.000068796,
+      "value": 1024
+    },
+    {
+      "averagePrice": 0.0000013104000000000002,
+      "averageDuration": 38.9875,
+      "totalCost": 0.00013490400000000006,
+      "value": 2048
+    },
+    {
+      "averagePrice": 0.0000019246500000000003,
+      "averageDuration": 38.606666666666676,
+      "totalCost": 0.00020115060000000003,
+      "value": 3008
+    }
+  ],
+  "analysis": {
+    "power": 3008,
+    "cost": 0.0000019246500000000003,
+    "duration": 38.606666666666676,
+    "stateMachine": {
+      "executionCost": 0.0003,
+      "lambdaCost": 0.0005434254000000001,
+      "visualization": "https://lambda-power-tuning.show/#gAAAAQACAAQACMAL;+fVTQ+YpwEKKumFCZ58fQjPzG0I6bRpC;0gPvNKG42jTjhgA1fWM0NQDhrzU8KQE2"
+    }
+  }
+}

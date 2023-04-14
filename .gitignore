@@ -3,3 +3,9 @@
 
 **/.aws-sam/
 **/target/
+
+# typcal name for Python virtual environments
+**/venv/
+**/.pytest_cache/
+.coverage
+**/__pycache__/
