@@ -79,6 +79,29 @@ Resources:
       Policies:
         - AmazonDynamoDBFullAccess
 
+  MicronautFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./micronaut-function
+      FunctionName: serverless2049-scenario01-function-MicronautFunction
+      Handler: com.lineup.scenario01.function.micronaut.FunctionRequestHandler
+      Runtime: java11
+      Policies:
+        - AmazonDynamoDBFullAccess
+
+
+  MicronautGraalFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./micronaut-function/target/function.zip
+      FunctionName: serverless2049-scenario01-function-MicronautGraalFunction
+      Handler: com.lineup.scenario01.function.micronaut.Function
+      Runtime: provided.al2
+      Policies:
+        - AmazonDynamoDBFullAccess
+    Metadata:
+      SkipBuild: True
+
   DatabaseTable:
     Type: AWS::Serverless::SimpleTable
     Properties:

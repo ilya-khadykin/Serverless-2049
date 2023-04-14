@@ -59,6 +59,19 @@
 | Average cheapest |    256     |    0.000000034    |         7          |      864       |
 | Average fastest  |    2048    |    0.000000234    |         7          |      399       |
 
+**Java 11 runtime (Micronaut)**
+
+|                  | Memory, MB | Execution cost, $ | Execution time, ms | Cold start, ms |
+|:----------------:|:----------:|:-----------------:|:------------------:|:--------------:|
+| Average cheapest |    768     |    0.000000176    |         13         |      5222      |
+| Average fastest  |    2048    |    0.000000400    |         11         |      4253      |
+
+**Java 11 runtime (Micronaut & GraalNI)**
+
+|                  | Memory, MB | Execution cost, $ | Execution time, ms | Cold start, ms |
+|:----------------:|:----------:|:-----------------:|:------------------:|:--------------:|
+| Average cheapest |    256     |    0.000000038    |         8          |      475       |
+| Average fastest  |    2048    |    0.000000302    |         8          |      468       |
 ### 02. HTTP triggered function writes to serverless storage
 
 **Description**
